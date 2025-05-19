@@ -1,0 +1,9 @@
+require "twilio-ruby"
+
+TWILIO_CLIENT = Twilio::REST::Client.new(
+  ENV.fetch("TWILIO_ACCOUNT_SID"),
+  ENV.fetch("TWILIO_AUTH_TOKEN")
+)
+
+TWILIO_FROM_NUMBER = ENV.fetch("TWILIO_PHONE_NUMBER")
+REMINDER_TO_NUMBER   = ENV.fetch("REMINDER_TO_NUMBER")

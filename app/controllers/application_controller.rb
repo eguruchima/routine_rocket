@@ -1,4 +1,8 @@
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
+  # Allow JSON requests without CSRF tokens
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 end
